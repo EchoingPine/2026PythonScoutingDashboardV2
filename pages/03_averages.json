@@ -1,0 +1,22 @@
+{
+    "columns": {
+        "auto_columns": [
+            "Auto Hub Fuel",
+            "Auto Ferried Fuel",
+            "Accuracy?",
+            "Auto Points"
+        ],
+        
+        "teleop_columns": [
+            "Tele Hub Fuel",
+            "Tele Ferried Fuel",
+            "Tele Hub Fuel Accuracy",
+            "Teleop Points"
+        ],
+
+        "total_columns": [
+            "Total Fuel Shot",
+            "Total Points"
+        ]
+    }
+}

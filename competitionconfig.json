@@ -1,0 +1,33 @@
+{
+  "year": "2026",
+  "season": "Rebuilt",
+  "competitions": [
+    {
+        "name": "2026 DCMP Newsom Division",
+        "event_key": "2026necmp2",
+        "google_sheet_id": "1hcZ-4qlPq6KUjxG1ETJlETlZDHVossKqGa6yZzfyWkM",
+        "quant_worksheet_name": "RAW Quant",
+        "qual_worksheet_name": "RAW Qual",
+        "pit_worksheet_name": "PIT",
+        "competition_week": 7
+    }
+  ],
+  "computed": [
+    {
+        "id": "Auto Points", 
+        "formula": "'Auto Hub Fuel' * 'Accuracy?'" 
+    },
+    { 
+        "id": "Teleop Points", 
+        "formula": "'Tele Hub Fuel' * 'Tele Hub Fuel Accuracy'"
+    },
+    { 
+        "id": "Total Points", 
+        "formula": "'Auto Points' + 'Teleop Points'" 
+    },
+    { 
+        "id": "Total Fuel Shot", 
+        "formula": "'Auto Hub Fuel' + 'Tele Hub Fuel' + 'Auto Ferried Fuel' + 'Tele Ferried Fuel'" 
+    }
+  ]
+}

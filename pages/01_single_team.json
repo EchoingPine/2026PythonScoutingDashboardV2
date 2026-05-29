@@ -1,0 +1,26 @@
+{
+    "graph": {
+        "traces": [
+            {
+                "data_series": "Auto Points",
+                "type": "scatter",
+                "mode": "lines+markers"
+            },
+            {
+                "data_series": "Teleop Points",
+                "type": "scatter",
+                "mode": "lines+markers"
+            },
+            {
+                "data_series": "Total Points",
+                "type": "scatter",
+                "mode": "lines+markers"
+            },
+            {
+                "data_series": "Total Fuel Shot",
+                "type": "scatter",
+                "mode": "lines+markers"
+            }
+        ]
+    }
+}
