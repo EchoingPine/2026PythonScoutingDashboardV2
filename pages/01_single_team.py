@@ -65,7 +65,7 @@ fig.update_layout(
     yaxis_range=[-5, y_axis_max],
 )
 
-pdata = cursor.execute('SELECT * FROM pit WHERE "Team Number" = ?', (team_number,))
+pdata = cursor.execute('SELECT * FROM pit WHERE "Team number" = ?', (team_number,))
 pit_data = pd.DataFrame(pdata.fetchall(), columns=[desc[0] for desc in cursor.description])
 
 st.markdown(f"# Team {team_number}")
