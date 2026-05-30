@@ -65,6 +65,9 @@ fig.update_layout(
     yaxis_range=[-5, y_axis_max],
 )
 
+pdata = cursor.execute('SELECT * FROM pit WHERE "Team Number" = ?', (team_number,))
+pit_data = pd.DataFrame(pdata.fetchall(), columns=[desc[0] for desc in cursor.description])
+
 st.markdown(f"# Team {team_number}")
 
 st.markdown("Data Over Matches")
@@ -72,3 +75,5 @@ st.markdown("Data Over Matches")
 st.plotly_chart(fig, use_container_width=True)
 
 st.dataframe(quant_data)
+
+st.dataframe(pit_data)

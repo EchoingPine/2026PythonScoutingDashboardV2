@@ -72,4 +72,8 @@ def calculate_metrics():
 
     cdf.to_sql("quant", conn, if_exists="replace", index=False)
 
+    pworksheet = spreadsheet.worksheet(active_competition['pit_worksheet_name'])
+    pdf = pd.DataFrame(pworksheet.get_all_records())
+    pdf.to_sql("pit", conn, if_exists="replace", index=False)
+
 calculate_metrics()
