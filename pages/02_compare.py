@@ -169,7 +169,7 @@ for batch_start in range(0, len(graph_team_numbers), 3):
             title=f"Team {graph_team_number} Performance Over Matches",
             xaxis_title="Match Number",
             yaxis_title="Points / Fuel Shot",
-            yaxis_range=[-5, y_axis_max],
+            yaxis_range=[-1, 14],
             showlegend=show_legend,
         )
 

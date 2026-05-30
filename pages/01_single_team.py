@@ -51,10 +51,10 @@ for trace in trace_config:
         )
     )
 
-if 'Total Fuel Shot' in quant_data.columns and not quant_data.empty:
-    y_axis_max = quant_data['Total Fuel Shot'].max() * 1.2
+if 'Total O Perf' in quant_data.columns and not quant_data.empty:
+    y_axis_max = quant_data['Total O Perf'].max() * 1.2
 else:
-    y_axis_max = 1
+    y_axis_max = 14
 
 
 
