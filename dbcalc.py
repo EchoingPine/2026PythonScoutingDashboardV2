@@ -6,6 +6,31 @@ import re
 
 from app_utils import get_active_competition, get_gspread_client, load_competition_config
 
+
+def worksheet_to_dataframe(worksheet):
+    values = worksheet.get_all_values()
+    if not values:
+        return pd.DataFrame()
+
+    raw_headers = values[0]
+    headers = []
+    seen = {}
+
+    for index, raw_header in enumerate(raw_headers):
+        header = str(raw_header).strip() if raw_header is not None else ""
+        if not header:
+            header = f"Unnamed: {index + 1}"
+
+        if header in seen:
+            seen[header] += 1
+            header = f"{header}.{seen[header]}"
+        else:
+            seen[header] = 0
+
+        headers.append(header)
+
+    return pd.DataFrame(values[1:], columns=headers)
+
 def calculate_metrics():
     config = load_competition_config()
     active_competition = get_active_competition()
@@ -15,7 +40,7 @@ def calculate_metrics():
     gc = get_gspread_client()
     spreadsheet = gc.open_by_key(active_competition['google_sheet_id'])
     qworksheet = spreadsheet.worksheet(active_competition['quant_worksheet_name'])
-    qdf = pd.DataFrame(qworksheet.get_all_records())
+    qdf = worksheet_to_dataframe(qworksheet)
 
     conn = sqlite3.connect("ScoutingData.db")
 
@@ -73,7 +98,7 @@ def calculate_metrics():
     cdf.to_sql("quant", conn, if_exists="replace", index=False)
 
     pworksheet = spreadsheet.worksheet(active_competition['pit_worksheet_name'])
-    pdf = pd.DataFrame(pworksheet.get_all_records())
+    pdf = worksheet_to_dataframe(pworksheet)
     pdf.to_sql("pit", conn, if_exists="replace", index=False)
 
 calculate_metrics()
