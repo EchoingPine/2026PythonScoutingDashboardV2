@@ -1,22 +1,21 @@
 {
     "columns": {
         "auto_columns": [
-            "Auto Hub Fuel",
-            "Auto Ferried Fuel",
-            "Accuracy?",
-            "Auto Points"
+            "Auto O Perf",
+            "Auto Perf"
         ],
         
         "teleop_columns": [
-            "Tele Hub Fuel",
-            "Tele Ferried Fuel",
-            "Tele Hub Fuel Accuracy",
-            "Teleop Points"
+            "Teleop O Perf"
         ],
 
         "total_columns": [
-            "Total Fuel Shot",
-            "Total Points"
+            "Total O Perf",
+            "Defensive Perf",
+            "Defense Skill",
+            "Vulnerability Def",
+            "Aim Qual",
+            "Scoring Ability"
         ]
     }
 }

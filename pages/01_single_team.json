@@ -2,22 +2,22 @@
     "graph": {
         "traces": [
             {
-                "data_series": "Auto Points",
+                "data_series": "Auto O Perf",
                 "type": "scatter",
                 "mode": "lines+markers"
             },
             {
-                "data_series": "Teleop Points",
+                "data_series": "Teleop O Perf",
                 "type": "scatter",
                 "mode": "lines+markers"
             },
             {
-                "data_series": "Total Points",
+                "data_series": "Total O Perf",
                 "type": "scatter",
                 "mode": "lines+markers"
             },
             {
-                "data_series": "Total Fuel Shot",
+                "data_series": "Defensive Perf",
                 "type": "scatter",
                 "mode": "lines+markers"
             }
