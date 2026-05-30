@@ -23,7 +23,7 @@
     },
     { 
         "id": "Total O Perf", 
-        "formula": "'Auto O Perf' + 'Teleop O Perf'" 
+        "formula": "'Auto O Perf' + 'Teleop O Perf' * ('Aim Qual' / 7)" 
     },
     { 
         "id": "Defensive Perf", 
